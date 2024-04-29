@@ -1,11 +1,12 @@
 
 import task01
 import task02
+import task03
 
 # Головне меню домашки для перевикористання
 main_menu = '''1. Кількість днів від заданої дати
 2. Випадкові числа для лотереї
-3.
+3. Нормалізація телефонних номерів
 4.'''
 
 # Перший вивід головного меню
@@ -37,8 +38,11 @@ while True:
             except ValueError:
                 print('Це не число. Щасти наступного разу.')
         case '3':
-            # Користувач обрав третє завдання
-            print('Не вгадав')
+            print('От з чим доводиться працювати: ', task03.raw_numbers)
+
+            sanitized_numbers = [task03.normalize_phone(num) for num in task03.raw_numbers]
+
+            print('Нормалізовані номери телефонів для SMS-розсилки: ', sanitized_numbers)
         case '4':
             # Користувач обрав четверте завдання
             print('Не вгадав')
